@@ -6,20 +6,20 @@
 {
     NSFileManager* fileManager = [NSFileManager defaultManager];
     
-    // Bail out if source file does not exist
-//    if (![fileManager fileExistsAtPath:src]) {
-//        return NO;
-//    }
-//
-//    // Bail out if dest file exists
-//    if ([fileManager fileExistsAtPath:dest]) {
-//        return NO;
-//    }
-//
-//    // create path to dest
-//    if (![fileManager createDirectoryAtPath:[dest stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil]) {
-//        return NO;
-//    }
+//     Bail out if source file does not exist
+    if (![fileManager fileExistsAtPath:src]) {
+        return NO;
+    }
+
+    // Bail out if dest file exists
+    if ([fileManager fileExistsAtPath:dest]) {
+        return NO;
+    }
+
+    // create path to dest
+    if (![fileManager createDirectoryAtPath:[dest stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil]) {
+        return NO;
+    }
     
     // copy src to dest
     return [fileManager copyItemAtPath:src toPath:dest error:nil];
